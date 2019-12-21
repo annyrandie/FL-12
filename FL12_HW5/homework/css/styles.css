@@ -1,0 +1,367 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+
+body {
+  font-family: roboto;
+  background: #0b192f;
+}
+
+/* Your styles go here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.post-one {
+  background: #2d95bb;
+}
+.post-two {
+  background: #9d27b0;
+}
+.post-three {
+  background: #ed5120;
+}
+.post-four {
+  background: #9bb800;
+}
+.post-five {
+  background: #9d27b0;
+}
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.burger-icon {
+  display : none;
+}
+.head {
+  width: 100%;
+  height: 100px;
+  background: #024161;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  margin-bottom: 10px;
+}
+.head-menu {
+  list-style: none; 
+}
+.head-menu li {
+  display: inline;
+  margin-right: 20px; 
+}
+.head-menu a{
+  text-decoration: none;
+  color: #fff;
+  padding: 40px 20px 40px 20px; 
+}
+.head-menu a:hover {
+  background: #1f52a4;
+}
+.head span:nth-of-type(1) {
+  color: #fff;
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+.head span:nth-of-type(2) {
+  color: fuchsia;
+  font-size: 35px;
+  font-weight: lighter;
+}
+.header-section {
+  background-image: url(../img/post0.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  padding-left: 30px;
+  
+  
+}
+.header-section p {
+  width: 75%;
+  line-height: 1.5;
+  padding-left: 0;
+  opacity: 0.7;
+  margin-bottom: 30px; 
+}
+.header-section h1 {
+  margin-top: 320px;
+  margin-bottom: 10px;
+  font-size: 55px;
+  font-weight: lighter;
+  opacity: 0.7;  
+  
+}
+.flex-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.container-articles {
+  width: 78%;
+  color: #fff;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.container-news {
+  width: 20%;
+  color: #fff;
+}
+
+.post {
+  display: flex;
+  flex-direction: row;
+  
+}
+.post:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.post:nth-child(odd) article {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 15px 30px 0px;
+}
+.post:nth-child(even) article {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 30px 0px 0px 15px;
+}
+.post:nth-child(odd) article p {
+  text-align: left;
+}
+.post:nth-child(even) article p {
+  text-align: right;
+}
+
+.post:nth-child(odd) .post-article-text {
+  margin-left: 30px;
+}
+.post:nth-child(even) .post-article-text{
+  margin-right: 30px;
+}
+.post-text-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-text-heading-date {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.3;
+  margin-top: -10px;
+  line-height: 1;
+}
+.post-text-heading-date span:nth-child(1) {
+  font-size: 55px;
+}
+.post-text-heading-date span:nth-child(2) {
+  font-size: 35px;
+}
+.post-article-text h2 {
+  font-size: 55px;
+  font-weight: lighter;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+.post-article-text p {
+  line-height: 1.5;
+  opacity: 0.7;
+  font-size: 18px;
+  padding: 0;
+}
+
+.post-image:hover {
+  opacity: 0.7;
+}
+.post-article-text h2:hover {
+  opacity: 0.7;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+.news {
+  background: #fff;
+  color: black;
+}
+.news h2,p {
+  text-align: left;
+  padding: 0px 20px;
+  font-weight: normal;
+}
+.news h2 {
+  margin-top: 20px;
+  font-size: 30px;
+}
+footer {
+  color: #fff;
+  font-weight: lighter;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 30px 25px 30px;
+  background: #024161;
+  
+   
+}
+.footer-block {
+  margin-bottom: 0px;
+}
+footer span {
+  line-height: 1.5;
+}
+.news p {
+  margin-top: 10px;
+  padding-bottom: 20px;
+
+}
+footer div:nth-child(1) {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    max-width: 768px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .container-articles {
+    width: 64%;
+  }
+  .container-news {
+    width: 34%;
+  }
+  .burger-icon {
+    display: initial;
+    margin-bottom: 40px;
+  }
+  .burger-icon div {
+    width: 19px;
+    border-bottom: 2px solid white;
+    margin: 4px auto;
+  }
+  div.burger-icon-first-line {
+    opacity: 0.8;
+  }
+  div.burger-icon-second-line {
+    opacity: 0.4;
+  }
+  div.burger-icon-third-line {
+    border-bottom: 1px solid white;
+    opacity: 0.6;
+  }
+
+  
+  .head-menu {
+    display: none;
+  }
+  .head {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 25px;
+    height: 200px;
+  }
+  .header-section {
+    
+    height: 100%; 
+  }
+  .header-section p {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .post {
+    flex-direction: column;
+  }
+
+  .post-article-text h2 {
+    font-size: 40px;
+    
+    margin-bottom: 30px;
+  }
+  .post-text-heading-date span:nth-child(1) {
+    font-size: 45px;
+  }
+  .post-text-heading-date span:nth-child(2) {
+    font-size: 30px;
+  }
+  .post:nth-child(even) {
+    flex-direction: column;
+    text-align: right;
+  }
+  
+  .post:nth-child(even) article {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 15px 30px 35px;
+  }
+  .post:nth-child(odd) article {
+    
+    padding: 30px 15px 30px 35px;
+  }
+  .post:nth-child(even) article p,h2 {
+    text-align: left;
+  }
+  .post-article-text p {
+   
+    font-size: 16px;
+    
+  }
+  
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer div {
+    text-align: center;
+  }
+
+}
+@media screen and (max-width: 480px) {
+  .flex-content {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  body {
+    max-width: 480px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  .container-articles {
+    width: 100%;
+  }
+  .container-news {
+    width: 100%;
+  }
+  .header-section {
+    background-position: center;
+    align-content: flex-end;
+    
+  }
+  .header-section h1 {
+    margin-top: 80px;
+    font-size: 40px;
+    font-weight: lighter;
+    max-width: 320px;
+  }
+  .header-section p {
+    width: 90%;
+  }
+}
+
+
+

@@ -25,7 +25,7 @@ if ( isNaN(a) || isNaN(b) || isNaN(c) ) {
             alert('Isosceles triangle');
         } else if 
         (a !==b && a!==c && b!==c) {
-            alert('Scalene triangle’');
+            alert('Scalene triangle');
         }      
 } 
 }

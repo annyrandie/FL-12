@@ -12,13 +12,13 @@ function convert() {
         if(typeof arguments[i] ==='number') {
             result[i] =String(arguments[i]);
         } else {
-            result[i] = +(arguments[i]); 
+            result[i] = parseInt(arguments[i]); 
         }
         
     }
     return result;
 }
-convert('1', 2, 3, '4');
+console.log(convert('1', 2, 3, '4'));
 
 /*
 Task2
@@ -46,7 +46,7 @@ need. Reuse function from task 2.
 function mapArray(arr, callback) {
     let mappedArray = [];
     executeforEach(arr, function(item) {
-        mappedArray.push(callback(+item))
+        mappedArray.push(callback(parseInt(item)))
     });
     return mappedArray;  
 }
@@ -93,7 +93,7 @@ given range of numbers
 
 function makeListFromRange(a, b) {
     let result = [];
-    for(let i = a; i<=b; i++) {
+    for(let i = a; i <= b; i++) {
         result.push(i);
     }
     return result;
@@ -133,7 +133,7 @@ console.log(getArrayOfKeys(actors, 'age'));
 
 function substitude(arr) {
     let newArray = [];
-    executeforEach(arr, function(item) {
+    mapArray(arr, function(item) {
         const LOWEST_NUMBER = 30;
         if(item > LOWEST_NUMBER) {
             newArray.push(item);
@@ -153,13 +153,18 @@ It should not change the given source date.
 const date = new Date(2019, 0, 2);
 
 function getPastDate(date, num) {
+    const HOURS = 24;
+    const MINUTES = 60;
+    const SECONDS = 60;
+    const MILI_CONV = 1000;
+
     function convertNumofDays(days) {
-        return days*24*60*60*1000;
+        return days * HOURS * MINUTES * SECONDS * MILI_CONV;
     }
+
     let input_time = date.getTime();
     let past_time = input_time - convertNumofDays(num);
     let past_date = new Date(past_time);
-    console.log(past_date);
     return past_date.getDate();
 }
 
@@ -174,14 +179,14 @@ date in such format "YYYY/M/d HH:mm".
 */
 
 function formatDate(date) {
+    const INDEX_PLUS = 1;
     let day = date.getDate();
-    let monthIdx = date.getMonth() + 1;
+    let monthIdx = date.getMonth() + INDEX_PLUS;
     let year = date.getFullYear();
     let hours = date.getHours();
-    hours = ('0' + hours).slice(-2);
     let minutes = date.getMinutes();
 
-    return `${year}/${monthIdx}/${day} ${hours}:${minutes}`;
+    return `${year}/${monthIdx}/${day} ${hours <10 ? '0' + hours : hours}:${minutes <10 ? '0' + minutes: minutes}`;
 }
 
 console.log(formatDate(new Date()) );

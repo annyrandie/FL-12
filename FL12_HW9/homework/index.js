@@ -1,10 +1,6 @@
 // Your code goes here
-/*
-Task1
-Write a function that converts the argument values. If it will be 
-a string, convert it to number and wise versa.
-It should return an array of converted values.
-*/
+
+//Task1
 
 function convert() {
     let result = [];
@@ -18,30 +14,26 @@ function convert() {
     }
     return result;
 }
-console.log(convert('1', 2, 3, '4'));
 
-/*
-Task2
-Write function, which iterates over array and executes function 
-on each element.
-*/
+let a = 2, b = 3;
+convert('1', a, b, '4');
 
+
+//Task2
+
+let c = 1, d = 2, e = 3;
 function executeforEach(arr, func) {
     for(let i = 0; i<arr.length; i++) {
         func(arr[i]);
     }
 }
 
-executeforEach([1,2,3], function(el) { console.log(el * 2) });
+executeforEach([c,d,e], function(el) {
+     console.log(el * d) 
+    });
 
-/*
-Task3
-Write function, which returns transformed array based on function, 
-which passed as a second parameter (callback). If array contains 
-a number as string, it should convert it and return as number. 
-You’re allowed to change a body of that callback function if you 
-need. Reuse function from task 2.
-*/
+
+//Task3
 
 function mapArray(arr, callback) {
     let mappedArray = [];
@@ -50,13 +42,14 @@ function mapArray(arr, callback) {
     });
     return mappedArray;  
 }
-console.log(mapArray([2, '5', 8], function(el) {return el + 3 }));
 
-/*
-Task4
-Write function, which returns filtered array based on function, 
-which passed as a parameter. Reuse function from task 2.
-*/
+let f = 2, g = 8, h = 3;
+mapArray([f, '5', g], function(el) {
+    return el + h 
+});
+
+
+//Task4
 
 function filterArray(arr, callback) {
     let filteredArray = [];
@@ -68,11 +61,13 @@ function filterArray(arr, callback) {
     return filteredArray;
 }
 
-console.log(filterArray([2, 5, 8], function(el) { return el % 2 === 0 }));
-/*
-Task5
-Write a function that reverses the string value passed into it.
-*/
+let i = 2, j = 5, k = 8, l = 2;
+filterArray([i, j, k], function(el) { 
+    return el % l === 0 
+});
+
+
+//Task5
 
 function flipOver(str) {
     let newString = '';
@@ -85,11 +80,8 @@ function flipOver(str) {
 flipOver('hey world');
 
 
-/*
-Task6
-Write a function which creates an array from the 
-given range of numbers
-*/
+
+//Task6
 
 function makeListFromRange(a, b) {
     let result = [];
@@ -99,13 +91,11 @@ function makeListFromRange(a, b) {
     return result;
 }
 
-makeListFromRange(2,7);
+let m = 2, n =7;
+makeListFromRange(m,n);
 
-/*Task7
-Write a function that accepts an array of object and returns new array of values 
-by passed key name.
-That function should not change the original array. Reuse function from task 2. 
-*/
+
+//Task7
 
 const actors = [
     { name: 'tommy', age: 36 },
@@ -122,14 +112,10 @@ function getArrayOfKeys(arr, key) {
     return result;
 }
 
-console.log(getArrayOfKeys(actors, 'age'));
+getArrayOfKeys(actors, 'age');
 
-/*Task8
- Write function substitute() that accepts an array of numbers and manages to replace 
- all numbers lower than 30 with '*'. 
- It should return a new array with numbers and '*' instead of numbers lowest from 30. 
- Reuse function from task 3.
-*/
+
+//Task8
 
 function substitude(arr) {
     let newArray = [];
@@ -137,20 +123,22 @@ function substitude(arr) {
         const LOWEST_NUMBER = 30;
         if(item > LOWEST_NUMBER) {
             newArray.push(item);
+        } else {
+            newArray.push('*');
         }
-        newArray.push('*');
+        
     })
     return newArray;
 }
-console.log(substitude([58, 14, 48, 2, 31, 29]));
 
-/*
-Task9
-Write a function which returns a day number that was some 
-amount of days ago from the passed date.
-It should not change the given source date.
-*/
-const date = new Date(2019, 0, 2);
+let o = 58, p = 14, r = 48, s = 2, t = 31, u = 29;
+substitude([o, p, r, s, t, u]);
+
+
+//Task9
+
+let inputYear = 2019, inputDate = 2;
+const date = new Date(inputYear, 0, inputDate);
 
 function getPastDate(date, num) {
     const HOURS = 24;
@@ -168,26 +156,27 @@ function getPastDate(date, num) {
     return past_date.getDate();
 }
 
-console.log(getPastDate(date, 1)); 
-console.log(getPastDate(date, 2)); 
-console.log(getPastDate(date, 365)); 
+let oneDayAgo = 1;
+let twoDaysAgo = 2;
+let yearAgo = 365;
+getPastDate(date, oneDayAgo); 
+getPastDate(date, twoDaysAgo); 
+getPastDate(date, yearAgo); 
 
-/*
-Task10
-Write a function that formats a 
-date in such format "YYYY/M/d HH:mm".
-*/
+
+//Task10
 
 function formatDate(date) {
+    const TWODIGIT = 10;
     const INDEX_PLUS = 1;
     let day = date.getDate();
-    let monthIdx = date.getMonth() + INDEX_PLUS;
+    let monIdx = date.getMonth() + INDEX_PLUS;
     let year = date.getFullYear();
     let hours = date.getHours();
     let minutes = date.getMinutes();
 
-    return `${year}/${monthIdx}/${day} ${hours <10 ? '0' + hours : hours}:${minutes <10 ? '0' + minutes: minutes}`;
+    return `${year}/${monIdx}/${day} ${hours <TWODIGIT ?'0'+ hours : hours}:${minutes<TWODIGIT ?'0'+ minutes: minutes}`;
 }
 
-console.log(formatDate(new Date()) );
+formatDate(new Date()) ;
 

@@ -32,7 +32,7 @@ function executeforEach(arr, func) {
     }
 }
 
-executeforEach([1,2,3], function(el) {console.log(el * 2)});
+executeforEach([1,2,3], function(el) { console.log(el * 2) });
 
 /*
 Task3
@@ -44,14 +44,11 @@ need. Reuse function from task 2.
 */
 
 function mapArray(arr, callback) {
-    for(let i = 0; i<arr.length; i++) {
-        if(typeof arr[i] ==='string') {
-            arr[i] = +arr[i];
-        }
-    }
-   // executeforEach(arr, returnArray);
-    return arr;
-    
+    let mappedArray = [];
+    executeforEach(arr, function(item) {
+        mappedArray.push(callback(+item))
+    });
+    return mappedArray;  
 }
 console.log(mapArray([2, '5', 8], function(el) {return el + 3 }));
 
@@ -62,8 +59,16 @@ which passed as a parameter. Reuse function from task 2.
 */
 
 function filterArray(arr, callback) {
-
+    let filteredArray = [];
+    executeforEach(arr, function(item) {
+        if(callback(item)) { 
+            filteredArray.push(item) 
+        }
+    })
+    return filteredArray;
 }
+
+console.log(filterArray([2, 5, 8], function(el) { return el % 2 === 0 }));
 /*
 Task5
 Write a function that reverses the string value passed into it.
@@ -95,6 +100,49 @@ function makeListFromRange(a, b) {
 }
 
 makeListFromRange(2,7);
+
+/*Task7
+Write a function that accepts an array of object and returns new array of values 
+by passed key name.
+That function should not change the original array. Reuse function from task 2. 
+*/
+
+const actors = [
+    { name: 'tommy', age: 36 },
+    { name: 'lee', age: 28 }
+];
+
+function getArrayOfKeys(arr, key) {
+    const result = [];
+    function returnKey(item) {
+        result.push(item[key]);
+    }
+    executeforEach(arr, returnKey);
+
+    return result;
+}
+
+console.log(getArrayOfKeys(actors, 'age'));
+
+/*Task8
+ Write function substitute() that accepts an array of numbers and manages to replace 
+ all numbers lower than 30 with '*'. 
+ It should return a new array with numbers and '*' instead of numbers lowest from 30. 
+ Reuse function from task 3.
+*/
+
+function substitude(arr) {
+    let newArray = [];
+    executeforEach(arr, function(item) {
+        const LOWEST_NUMBER = 30;
+        if(item > LOWEST_NUMBER) {
+            newArray.push(item);
+        }
+        newArray.push('*');
+    })
+    return newArray;
+}
+console.log(substitude([58, 14, 48, 2, 31, 29]));
 
 /*
 Task9
@@ -137,3 +185,4 @@ function formatDate(date) {
 }
 
 console.log(formatDate(new Date()) );
+

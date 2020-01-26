@@ -1,0 +1,80 @@
+/* Todo: your styles go here*/
+
+
+ul {
+  list-style: none;
+ }
+ 
+ li {
+   padding-left: 10px;
+ }
+ 
+ .empty {
+   font-style: italic;
+ }
+ 
+ .folderFile-wrapper {
+   display: flex;
+   align-items: center;
+ }
+ .folderFile-wrapper:hover {
+   background-color: rgb(212, 209, 209);
+ }
+ 
+ .grey {
+   color:grey;
+ }
+ 
+ .empty-folder {
+   font-style: italic;
+   -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+ }
+ 
+ .expand {
+   cursor: pointer;
+   -webkit-user-select: none; /* Safari 3.1+ */
+   -moz-user-select: none; /* Firefox 2+ */
+   -ms-user-select: none; /* IE 10+ */
+   user-select: none;
+ }
+ .expand:hover {
+   background-color: rgb(212, 209, 209);
+ }
+ .nested {
+   display: none;
+ }
+ .active {
+   display: block;
+ }
+ 
+ .backgroundGrey {
+   background-color: grey;
+ }
+ .backgroundWhite {
+   background-color: white;
+ }
+ 
+ .dot {
+   height: 20px; width: 20px;
+   border-radius: 20px; /* rounds corners */
+   background: rgb(255, 123, 0);
+   position: absolute;
+   pointer-events: none;
+   box-shadow: 2px 2px 2px 0px  rgb(255, 123, 0);
+ }
+ 
+ .folder-closed::before {
+   content: "folder";
+   color: orange;
+ }
+ 
+ .folder-open::before {
+   content: "folder_open";
+   color: orange;
+ }
+ 
